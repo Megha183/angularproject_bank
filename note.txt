@@ -1,0 +1,24 @@
+life cycle of angular components
+
+constructor-->ngOnit-->other methods
+
+Data binding techniiques in angular (data sharing in component)
+---------------------------------
+
+html-view
+ts- component
+
+
+
+1.one way binding
+------------------
+
+1.1 component to view data sharing
+---------------------------------
+  1.1.1-  string interpolation  {{}}
+  1.1.2 -property binding  -[property]=""
+
+1.2. view to component data sharing
+   
+   1.2.1 event binding   (event)="method()"
+   1.2.2 event binding using $event  (event)=method($event)
