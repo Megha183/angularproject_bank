@@ -3,13 +3,13 @@
     <h1 class="text-center mt-3">Sign In to Your Account</h1>
     <form action="">
         <div class="p-3 mt-2">
-            <input class="form-control" #acno type="text"id="acid"name="acnum1" [placeholder]="inputPlaceholder">
+            <input [(ngModel)]="acno"class="form-control"  type="text"id="acid"name="acnum1" [placeholder]="inputPlaceholder">
         </div>
         <div class="p-3 mt-2">
-            <input class="form-control"#psw type="password"placeholder="Enter Password"id="psw1"name="'paswrd1">
+            <input [(ngModel)]="psw" class="form-control" type="password"placeholder="Enter Password"id="psw1"name="'paswrd1">
         </div>
         <div class="p-3 mt-2">
-            <button class="btn btn-outline-light"type="button"(click)="login(acno,psw)">Login</button>
+            <button class="btn btn-outline-light"type="button"(click)="login()">Login</button>
         </div>
     </form>
 </div>

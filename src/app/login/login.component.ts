@@ -9,9 +9,9 @@ export class LoginComponent {
 
   data="your perfect banking transfer"
   inputPlaceholder="Account number"
-  // acno=''
-  // // acno:any
-  // psw=''
+  acno=''
+  // acno:any
+  psw=''
 userDetails:any={
 
   
@@ -23,27 +23,9 @@ userDetails:any={
 }
 constructor(){ }
 
-// login(){
-//   var acnum=this.acno
-//   var psw=this.psw
-//   var userDetails=this.userDetails
-//   if(acnum in userDetails){
-// if(psw==userDetails[acnum]["password"]){
-//   alert("login success")
-// }else{
-//   alert("incorrect passsword")
-// }
-//   }
-//   else{
-//     alert("acno incorrect or not registerd yet")
-//   }
-//   // alert("login clicked")
-// }
-login(a:any,b:any){
-  console.log(a.value);
-  
-  var acnum=a.value
-  var psw=b.value
+login(){
+  var acnum=this.acno
+  var psw=this.psw
   var userDetails=this.userDetails
   if(acnum in userDetails){
 if(psw==userDetails[acnum]["password"]){
@@ -55,8 +37,30 @@ if(psw==userDetails[acnum]["password"]){
   else{
     alert("acno incorrect or not registerd yet")
   }
-  alert("login clicked")
+  // alert("login clicked")
 }
+
+//template rendering
+
+//---------------------------------
+// login(a:any,b:any){
+//   // console.log(a.value);
+  
+//   var acnum=a.value
+//   var psw=b.value
+//   var userDetails=this.userDetails
+//   if(acnum in userDetails){
+// if(psw==userDetails[acnum]["password"]){
+//   alert("login success")
+// }else{
+//   alert("incorrect passsword")
+// }
+//   }
+//   else{
+//     alert("acno incorrect or not registerd yet")
+//   }
+//   alert("login clicked")
+// }
 // acnoChange(event:any){
 //   this.acno=event.target.value
 //   // console.log(this.acno);
