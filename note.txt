@@ -22,3 +22,4 @@ ts- component
    
    1.2.1 event binding   (event)="method()"
    1.2.2 event binding using $event  (event)=method($event)
+   1.2.3 event binding with template rendering  variable  #variable
