@@ -27,3 +27,29 @@ ts- component
 2.Two way binding
 -------------------------------
 2.1 ngModel   [(ngModel)]="property"
+
+Redirection in angular
+----------------------------
+Module -AppRoutingModule
+Router - a class used to redirect
+methods -navigateByUrl
+
+Dependency Injection
+----------------------
+to share data from one class to another class  --inside constructor
+
+we need 
+ access_specifier  reference:ClassName
+ private/public
+
+ reference.method()
+
+
+ Angular services
+ ------------------
+
+ to store redentant datas and methods 
+ -all the component can access the datas and methods defined 
+ in service file easily
+
+     -ng g s service_name
