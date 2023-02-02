@@ -20,19 +20,16 @@ constructor(private router:Router,private ds:DataService){ }
 login(){
   var acnum=this.acno
   var psw=this.psw
-  var userDetails=this.ds.userDetails
-  if(acnum in userDetails){
-if(psw==userDetails[acnum]["password"]){
-  alert("login success")
-  this.router.navigateByUrl(`dashboard`)
-}else{
-  alert("incorrect passsword")
-}
+ 
+  const result=this.ds.login(acnum,psw)
+  if(result){
+    alert('login success')
+    this.router.navigateByUrl('dashboard')
+
   }
   else{
-    alert("acno incorrect or not registerd yet")
+    alert('incorrect acno or password')
   }
-  // alert("login clicked")
 }
 
 //template rendering

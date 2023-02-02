@@ -1,7 +1,7 @@
 <h2 class="ms-2 p-2 mt-2">{{data}}</h2>
 <div class="container w-50 rounded border border-white text-center mt-5"style="background-color:rgb(0,0,0,0.284);">
     <h1 class="text-center mt-3">Sign In to Your Account</h1>
-    <form action="">
+    <form action=""(ngSubmit)="login()">
         <div class="p-3 mt-2">
             <input [(ngModel)]="acno"class="form-control"  type="text"id="acid"name="acnum1" [placeholder]="inputPlaceholder">
         </div>
@@ -9,7 +9,7 @@
             <input [(ngModel)]="psw" class="form-control" type="password"placeholder="Enter Password"id="psw1"name="'paswrd1">
         </div>
         <div class="p-3 mt-2">
-            <button class="btn btn-outline-light"type="button"(click)="login()">Login</button>
+            <button class="btn btn-outline-light"type="submit">Login</button>
         </div>
 
         <div class="text-center text-white" mt-2><strong> Not registered ?</strong> 
