@@ -23,12 +23,12 @@ login(){
  
   const result=this.ds.login(acnum,psw)
   if(result){
-    alert('login success')
+    alert('Login success')
     this.router.navigateByUrl('dashboard')
 
   }
   else{
-    alert('incorrect acno or password')
+    alert('Incorrect account number or password')
   }
 }
 

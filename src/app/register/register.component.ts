@@ -25,11 +25,11 @@ export class RegisterComponent {
     // console.log(uname),console.log(acno),console.log(psw);
     const result=this.ds.register(uname,acno,psw)
     if(result){
-      alert("registered")
+      alert("Registered")
       this.router.navigateByUrl("")
     }
     else{
-      alert("acno already preset")
+      alert("Account number already present")
     }
 
     

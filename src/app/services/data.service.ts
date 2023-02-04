@@ -47,4 +47,52 @@ else{
     }
     // alert("login clicked")
   }
+
+  deposit(acnum:any,password:any,amount:any){
+    let userDetails=this.userDetails
+    //convert string amount to number-parseInt
+    var amnt=parseInt(amount)
+
+    if(acnum in userDetails){
+      if(password==userDetails[acnum]["password"]){
+// update balance
+userDetails[acnum]["balance"]+=amnt
+
+// return balance
+return userDetails[acnum]["balance"]
+      }
+    
+else{
+  return false
+}
+}
+else{
+  return false
+}
+  }
+
+withdraw(acnum:any,password:any,amount:any){
+  let userDetails=this.userDetails
+  var amnt=parseInt(amount)
+  if(acnum in userDetails){
+    if(password==userDetails[acnum]["password"]) {
+      if(amnt< userDetails[acnum]["balance"]){
+        userDetails[acnum]["balance"]-=amnt
+        return userDetails[acnum]["balance"]
+
+      }else{
+        alert("Insufficient balance")
+        return false
+      }
+
+    }else{
+      alert("Incorrect password")
+      return false
+    }
+}
+else{
+  alert("Incorect account number")
+  return false
+}
+}
 }
