@@ -20,8 +20,9 @@ amnt1:any
   constructor(private ds:DataService){
     this.user=this.ds.currentUser
   }
+  
 
-  deposit(){
+deposit(){
 var acno=this.acno
 var psw=this.psw
 var amnt=this.amnt
@@ -34,6 +35,7 @@ else{
 }
 }
 
+
   withdraw(){
     var acno=this.acno1
     var psw=this.psw1
@@ -42,8 +44,5 @@ else{
     if(result){
       alert(`Your account has been debited with amount ${amnt} and the current balance is ${result}`)
     }
-    
-   
-
   }
 }

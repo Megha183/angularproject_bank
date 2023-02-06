@@ -25,6 +25,7 @@ login(){
   if(result){
     alert('Login success')
     this.router.navigateByUrl('dashboard')
+    
 
   }
   else{

@@ -53,3 +53,12 @@ we need
  in service file easily
 
      -ng g s service_name
+
+
+Angular directives - to manipulate DOM
+
+-----------------------------
+
+1.component directives -
+
+2.structural directives   *ngfor

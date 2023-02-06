@@ -31,9 +31,5 @@ export class RegisterComponent {
     else{
       alert("Account number already present")
     }
-
-    
-    
   }
-
 }

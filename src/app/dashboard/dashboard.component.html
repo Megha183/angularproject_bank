@@ -1,5 +1,8 @@
 
 <h1>Welcome {{user}}</h1>
+<div class="p-2 mt-3  text-center w-25 border border-dark rounded-pill container  " style="background-color:rgb(0,0,0,0.284);">
+<a style="text-decoration: none;color: rgb(255, 255, 255);" href=""routerLink="/transaction">View transaction history</a>
+</div>
 
 <div class="row mb-5 p-5 w-100">
 <div class="text-center container col-lg-6 col-md-12 ">
@@ -39,7 +42,7 @@
             <input [(ngModel)]="psw1" class="form-control" type="password"id="psw2"name="paswrd2"placeholder="Enter Password">
         </div>
         <div class="p-3 mt-2">
-            <input  [(ngModel)]="amnt1" class="form-control" type="password"id="amouid2"name="amt2"placeholder="Enter Amount">
+            <input  [(ngModel)]="amnt1" class="form-control" type="text"id="amouid2"name="amt2"placeholder="Enter Amount">
         </div>
         
         <div class="p-3 mt-2">
