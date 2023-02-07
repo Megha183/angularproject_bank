@@ -62,3 +62,18 @@ Angular directives - to manipulate DOM
 1.component directives -
 
 2.structural directives   *ngfor
+
+Validation In Angular
+---------------------
+
+form creation in angular(2 types)
+
+  1.Template driven form
+  2.Model driven form (better method)
+       
+    2.1. Reactive form - used to create model of form
+       reactive form contain- group,array,control
+
+         -ReactiveFormsModule  - module
+         -FormBuilder          - class used to create model form 
+         -group()              - method to create model
