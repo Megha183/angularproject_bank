@@ -77,3 +77,13 @@ form creation in angular(2 types)
          -ReactiveFormsModule  - module
          -FormBuilder          - class used to create model form 
          -group()              - method to create model
+
+
+Local storage in angular
+--------------------------
+
+localStorage.getItem()
+localStorage.setItem()
+localStorage.removeItem()
+
+ts to json -stringify      parse-json to ts
