@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { DataService } from '../services/data.service';
 export class DashboardComponent {
 
 user:any
+acno:any
 // acno:any
 // psw:any
 // amnt:any
@@ -18,7 +20,7 @@ user:any
 // psw1:any
 // amnt1:any
 
-  constructor(private ds:DataService,private fb:FormBuilder){
+  constructor(private ds:DataService,private fb:FormBuilder,private router:Router){
     this.user=this.ds.currentUser
   }
   depositForm=this.fb.group({
@@ -32,6 +34,13 @@ user:any
     psw1:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]],
     amnt1:['',[Validators.required,Validators.pattern('[0-9]+')]]
   })
+
+  ngOnInit(): void{
+    if(!localStorage.getItem("currentAcno")){
+      alert("please login")
+      this.router.navigateByUrl("")
+    }
+  }
 
 deposit(){
 var acno=this.depositForm.value.acno
@@ -65,5 +74,16 @@ else{
     else{
       alert("invalid form")
     }
+  }
+
+  logout(){
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("currentAcno")
+    this.router.navigateByUrl("")
+  }
+
+  deleteParent(){
+    this.acno=JSON.parse(localStorage.getItem("currentAcno") || "")
+
   }
 }

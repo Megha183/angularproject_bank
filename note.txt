@@ -61,7 +61,9 @@ Angular directives - to manipulate DOM
 
 1.component directives -
 
-2.structural directives   *ngfor
+2.structural directives   *ngfor *ngIf
+
+3.attribute directives [ngClass]
 
 Validation In Angular
 ---------------------
@@ -87,3 +89,9 @@ localStorage.setItem()
 localStorage.removeItem()
 
 ts to json -stringify      parse-json to ts
+
+*Parent Child Components Communication
+---------------------------------------
+
+@Input() parent to child data sharing
+@Output() child to parent data sharing
