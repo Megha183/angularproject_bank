@@ -1,5 +1,7 @@
-
-<div class="text-end pt-3 pe-4 ">
+<div class="text-black text-center mt-3">
+<h5>{{datedetails | date:'short'}}</h5>
+</div>
+<div class="text-end pt-2 pe-4 ">
     <button (click)="deleteParent()" class="btn btn-danger">Delete Account</button>
     <button (click)="logout()" class="btn btn-warning ms-2">Log Out</button>
 
@@ -8,47 +10,44 @@
 <h1>Welcome {{user}}</h1>
 
 <div class="p-2 mt-3  text-center w-25 border border-dark rounded-pill container  " style="background-color:rgb(0,0,0,0.284);">
-<a style="text-decoration: none;color: rgb(255, 255, 255);" href=""routerLink="/transaction">View transaction history</a>
+ <a style="text-decoration: none;color: rgb(255, 255, 255);" href=""routerLink="/transaction">View transaction history</a>
 </div>
 
-<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+<app-deleteconfirm (oncancel)="cancel()" [item]="acno"></app-deleteconfirm>
+
 
 <div [ngClass]="acno?'style':'' " class="row mb-5 p-5 w-100">
-<div  class=" container col-lg-6 col-md-12 ">
-    <div class="container w-75 rounded   p-5  mt-2"style="background-color:rgb(0,0,0,0.54);">
-        
-    <h1 class="text-white text-center">Deposit</h1>
-    <form action="" [formGroup]="depositForm">
-
-        <div class="p-3 mt-2">
-            <input formControlName="acno" class="form-control"  type="text" id="acid1"name="acnum1" placeholder="Enter Account Number">
-        </div>
-        <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
-            <p class="text-danger fw-bold">accept only numbers</p>
-        </div>
-        <div class="p-3 mt-2">
-            <input formControlName="psw" class="form-control" type="password" id="psw1"name="paswrd1" placeholder="Enter Password">
-        </div>
-        <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
-            <p class="text-danger fw-bold">accept only numbers and characters</p>
-        </div>
-        <div class="p-3 mt-2">
-            <input formControlName="amnt" class="form-control"  type="text"id="amouid1"name="amnt1" placeholder="Enter Amount">
-        </div>
-        <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
-            <p class="text-danger fw-bold">accept only numbers</p>
-        </div>
-        <div class="p-3 mt-2 text-center ">
-            <button class="btn btn-outline-light"type="button"(click)="deposit()" >Deposit</button>
-        </div>
-
-       
-    </form>
-    </div>
-</div>
+ <div  class=" container col-lg-6 col-md-12 ">
+     <div class="container w-75 rounded   p-5  mt-2"style="background-color:rgb(0,0,0,0.54);">
+         <h1 class="text-white text-center">Deposit</h1>
+         <form action="" [formGroup]="depositForm">
+             <div class="p-3 mt-2">
+                <input formControlName="acno" class="form-control"  type="text" id="acid1"name="acnum1" placeholder="Enter Account Number">
+             </div>
+             <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+             <p class="text-danger fw-bold">accept only numbers</p>
+             </div>
+             <div class="p-3 mt-2">
+             <input formControlName="psw" class="form-control" type="password" id="psw1"name="paswrd1" placeholder="Enter Password">
+             </div>
+             <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
+             <p class="text-danger fw-bold">accept only numbers and characters</p>
+              </div>
+             <div class="p-3 mt-2">
+             <input formControlName="amnt" class="form-control"  type="text"id="amouid1"name="amnt1" placeholder="Enter Amount">
+              </div>
+             <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
+             <p class="text-danger fw-bold">accept only numbers</p>
+             </div>
+             <div class="p-3 mt-2 text-center ">
+             <button class="btn btn-outline-light"type="button"(click)="deposit()" >Deposit</button>
+             </div>
+            </form>
+     </div>
+ </div>
 
 
-<div class=" container col-lg-6 col-md-12 ">
+ <div class=" container col-lg-6 col-md-12 ">
     <div class="container w-75 rounded   p-5  mt-2"style="background-color:rgb(0,0,0,0.54);">
 
     <h1 class="text-white text-center">Withdraw</h1>
@@ -79,7 +78,7 @@
        
     </form>
     </div>
-</div>
+ </div>
 
 
 </div>

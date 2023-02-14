@@ -10,80 +10,89 @@ import { DataService } from '../services/data.service';
 })
 export class DashboardComponent {
 
-user:any
-acno:any
-// acno:any
-// psw:any
-// amnt:any
+  user: any
+  acno: any
+  datedetails: any
+  // acno:any
+  // psw:any
+  // amnt:any
 
-// acno1:any
-// psw1:any
-// amnt1:any
+  // acno1:any
+  // psw1:any
+  // amnt1:any
 
-  constructor(private ds:DataService,private fb:FormBuilder,private router:Router){
-    this.user=this.ds.currentUser
+
+
+  constructor(private ds: DataService, private fb: FormBuilder, private router: Router) {
+    this.user = this.ds.currentUser
+    //access date
+    this.datedetails = new Date()
   }
-  depositForm=this.fb.group({
-    acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-    psw:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]],
-    amnt:['',[Validators.required,Validators.pattern('[0-9]+')]]
+  depositForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]],
+    amnt: ['', [Validators.required, Validators.pattern('[0-9]+')]]
   })
 
-  withdrawForm=this.fb.group({
-    acno1:['',[Validators.required,Validators.pattern('[0-9]+')]],
-    psw1:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]],
-    amnt1:['',[Validators.required,Validators.pattern('[0-9]+')]]
+  withdrawForm = this.fb.group({
+    acno1: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw1: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]],
+    amnt1: ['', [Validators.required, Validators.pattern('[0-9]+')]]
   })
 
-  ngOnInit(): void{
-    if(!localStorage.getItem("currentAcno")){
+  ngOnInit(): void {
+    if (!localStorage.getItem("currentAcno")) {
       alert("please login")
       this.router.navigateByUrl("")
     }
   }
 
-deposit(){
-var acno=this.depositForm.value.acno
-var psw=this.depositForm.value.psw
-var amnt=this.depositForm.value.amnt
+  deposit() {
+    var acno = this.depositForm.value.acno
+    var psw = this.depositForm.value.psw
+    var amnt = this.depositForm.value.amnt
 
-if(this.depositForm.valid){
-const result=this.ds.deposit(acno,psw,amnt)
-if(result){
-  alert(`Your account has been credited with amount ${amnt} and the current balance is ${result}`)
-}
-else{
-  alert("Incorrect account number or password")
-}
-}
-else{
-  alert("invalid form")
-}
-}
+    if (this.depositForm.valid) {
+      const result = this.ds.deposit(acno, psw, amnt)
+      if (result) {
+        alert(`Your account has been credited with amount ${amnt} and the current balance is ${result}`)
+      }
+      else {
+        alert("Incorrect account number or password")
+      }
+      }
+      else {
+      alert("invalid form")
+      }
+    }
 
 
-  withdraw(){
-    var acno=this.withdrawForm.value.acno1
-    var psw=this.withdrawForm.value.psw1
-    var amnt=this.withdrawForm.value.amnt1
-    if(this.withdrawForm.valid){
-    const result=this.ds.withdraw(acno,psw,amnt)
-    if(result){
-      alert(`Your account has been debited with amount ${amnt} and the current balance is ${result}`)
-    }}
-    else{
+  withdraw() {
+    var acno = this.withdrawForm.value.acno1
+    var psw = this.withdrawForm.value.psw1
+    var amnt = this.withdrawForm.value.amnt1
+    if (this.withdrawForm.valid) {
+      const result = this.ds.withdraw(acno, psw, amnt)
+      if (result) {
+        alert(`Your account has been debited with amount ${amnt} and the current balance is ${result}`)
+      }
+    }
+    else {
       alert("invalid form")
     }
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem("currentUser")
     localStorage.removeItem("currentAcno")
     this.router.navigateByUrl("")
   }
 
-  deleteParent(){
-    this.acno=JSON.parse(localStorage.getItem("currentAcno") || "")
+  deleteParent() {
+    this.acno = JSON.parse(localStorage.getItem("currentAcno") || "")
 
+  }
+  cancel() {
+    this.acno = ''
   }
 }

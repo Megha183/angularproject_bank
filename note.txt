@@ -95,3 +95,25 @@ ts to json -stringify      parse-json to ts
 
 @Input() parent to child data sharing
 @Output() child to parent data sharing
+
+Event creation in angular
+-------------------------
+
+we can create our own events in angular projects
+
+EventEmitter - class used to create userderfined events
+
+             eventname=new EventEmitter()    (creating event)
+
+             emit() - to define the working time/to start the event
+
+Date and Time in Angular
+------------------------
+
+class -  Date
+
+Angular Pipes
+--------------
+
+used to convert datas into another format
+
